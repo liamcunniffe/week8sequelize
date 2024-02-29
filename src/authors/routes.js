@@ -3,6 +3,11 @@ const authorRouter = Router();
 
 const Author = require("./model");
 
-const { addAuthor } = require("./controllers");
+const { addAuthor, getSingleBookByAuthor } = require("./controllers");
 
-authorRouter.post("/authors/addAuthor");
+authorRouter.post("/authors/addAuthor", addAuthor);
+
+authorRouter.get(
+  "/authors/getSingleBookByAuthor/:authorname",
+  getSingleBookByAuthor
+);
